@@ -1,1 +1,28 @@
-spring.application.name=actuator-refresh
+spring:
+  application.name: actuator-refresh
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL}
+
+
+management:
+  endpoints.web.exposure.include: "*"
+
+test:
+  env: dev
+  servers:
+    - server1.example.com
+    - server2.example.com
+    - server3.example.com
+  credentials:
+    username: admin
+    password: secret
+    roles:
+      dev: developer
+      qa: tester
+      prod: admin
+
+#
+#logging:
+#  level:
+#    org.springframework.boot.context.config: DEBUG
+
