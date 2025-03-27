@@ -1,0 +1,13 @@
+test:
+  env: dev
+  servers:
+    - server1.example.com
+    - server2.example.com
+    - server3.example.com
+  credentials:
+    username: admin
+    password: secret
+    roles:
+      dev: developer
+      qa: tester
+      prod: admin
