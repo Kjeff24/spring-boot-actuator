@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ActuatorRefreshApplication {
+public class FirstServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ActuatorRefreshApplication.class, args);
+		SpringApplication.run(FirstServiceApplication.class, args);
 	}
 
 }

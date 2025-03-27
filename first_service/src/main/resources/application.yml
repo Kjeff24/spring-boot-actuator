@@ -1,5 +1,5 @@
 spring:
-  application.name: actuator-refresh
+  application.name: first-service
   config:
     import: optional:configserver:${CONFIG_SERVER_URL}
 
@@ -20,9 +20,3 @@ test:
       dev: developer
       qa: tester
       prod: admin
-
-#
-#logging:
-#  level:
-#    org.springframework.boot.context.config: DEBUG
-
