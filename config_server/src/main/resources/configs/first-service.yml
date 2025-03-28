@@ -11,3 +11,5 @@ test:
       dev: developer
       qa: tester
       prod: admin
+
+server.port: 8081

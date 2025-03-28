@@ -1,6 +1,7 @@
 package com.bexos.actuator_refresh.controller;
 
 import com.bexos.actuator_refresh.service.PropertyService;
+import org.springframework.core.convert.Property;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,11 @@ public class PropertyController {
 
     public PropertyController(PropertyService propertyService) {
         this.propertyService = propertyService;
+    }
+
+    @GetMapping
+    public PropertyService getProperties() {
+        return propertyService;
     }
 
     @GetMapping("/env")
