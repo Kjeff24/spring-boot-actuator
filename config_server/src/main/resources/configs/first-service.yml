@@ -5,7 +5,7 @@ test:
     - server2.example.com
     - server3.example.com
   credentials:
-    username: admin
+    username: user
     password: secret
     roles:
       dev: developer

@@ -8,17 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/test-a")
 public class PropertyController {
     private final PropertyService propertyService;
 
     public PropertyController(PropertyService propertyService) {
         this.propertyService = propertyService;
-    }
-
-    @GetMapping
-    public String hello() {
-        return "Hello World";
     }
 
     @GetMapping("/env")
