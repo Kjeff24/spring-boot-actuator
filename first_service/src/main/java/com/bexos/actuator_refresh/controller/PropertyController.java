@@ -27,7 +27,7 @@ public class PropertyController {
         return propertyService.getEnv();
     }
 
-    @GetMapping("/server")
+    @GetMapping("/servers")
     public List<String> server() {
         return propertyService.getServers();
     }

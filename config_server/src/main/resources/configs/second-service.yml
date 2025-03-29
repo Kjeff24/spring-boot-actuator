@@ -1,0 +1,16 @@
+test:
+  env: dev
+  servers: server1.example.com,server2.example.com,server3.example.com
+  databases:
+    - mysql
+    - postgres
+    - dynamoDB
+  credentials:
+    username: user
+    password: secret
+    roles:
+      dev: developer
+      qa: tester
+      prod: admin
+
+server.port: 8082
