@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+
+  # Rabbitmq Service
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: tbs-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    networks:
+      - rabbit-mq-network
+
+networks:
+  rabbit-mq-network:
+    driver: bridge
