@@ -4,14 +4,76 @@ This project demonstrates how to dynamically refresh configuration properties in
 ## Overview
 The project includes:
 
-- Config Server:
+#### Config Server
 Hosts the external configuration files. It acts as the centralized source of configuration.
 
-- First Service:
+#### First Service
 Consumes configuration using @ConfigurationProperties. Ideal for structured and grouped properties.
 
-- Second Service:
+**Configuration class**
+```java
+@Component
+@ConfigurationProperties(prefix = "test")
+public class PropertyService {
+    private String env;
+    private List<String> servers;
+    private Credentials credentials;
+
+    // Getters & Setters
+}
+```
+**Properties**
+```yaml
+test:
+  env: dev
+  servers:
+    - server1.example.com
+    - server2.example.com
+    - server3.example.com
+  credentials:
+    username: user
+    password: secret
+    roles:
+      dev: developer
+      qa: tester
+      prod: admin
+```
+#### Second Service
 Consumes configuration using @Value, combined with @RefreshScope to support dynamic refresh.
+
+**Configuration class**
+```java
+@RestController
+@RefreshScope
+@RequestMapping("/test")
+public class PropertyController {
+    @Value("${test.env}")
+    private String env;
+
+    @Value("${test.databases[0]}")
+    private String server1;
+    
+    // etc .....
+}
+```
+**Properties**
+```yaml
+test:
+  env: dev
+  servers: server1.example.com,server2.example.com,server3.example.com
+  databases:
+    - mysql
+    - postgres
+    - dynamoDB
+  credentials:
+    username: user
+    password: secret
+    roles:
+      dev: developer
+      qa: tester
+      prod: admin
+```
+
 
 ## Key Concepts
 ### 🔁 /actuator/refresh
