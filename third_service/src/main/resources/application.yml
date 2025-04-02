@@ -5,3 +5,6 @@ spring:
 
 management:
   endpoints.web.exposure.include: "*"
+  endpoint:
+    busrefresh:
+      access: unrestricted
