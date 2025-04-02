@@ -5,3 +5,19 @@ spring:
     port: ${RABBITMQ_PORT}
     username: ${RABBITMQ_USERNAME}
     password: ${RABBITMQ_PASSWORD}
+
+app:
+  name: "AwesomeApp"
+  version: 3.7.2
+  production: false
+  metadata:
+    release_date: 2025-04-15
+    author: "Jane Doe"
+    tags: ["web", "cloud", "saas"]
+    dependencies:
+      - name: "react"
+        version: "^18.2.0"
+      - name: "nodejs"
+        version: "20.x"
+
+server.port: 8084

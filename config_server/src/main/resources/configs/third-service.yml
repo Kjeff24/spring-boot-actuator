@@ -5,3 +5,16 @@ spring:
     port: ${RABBITMQ_PORT}
     username: ${RABBITMQ_USERNAME}
     password: ${RABBITMQ_PASSWORD}
+
+test:
+  users:
+    admin:
+      username: "superuser"
+      email: "admin@example.com"
+      permissions: ["read", "write", "delete"]
+    guest:
+      username: "visitor"
+      email: null
+      permissions: ["read"]
+
+server.port: 8083
