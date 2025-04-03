@@ -9,7 +9,7 @@ spring:
 test:
   users:
     admin:
-      username: "superuser"
+      username: "super-admin"
       email: "admin@example.com"
       permissions: ["read", "write", "delete"]
     guest:
@@ -18,3 +18,6 @@ test:
       permissions: ["read"]
 
 server.port: 8083
+
+management:
+  endpoints.web.exposure.include: health,busrefresh,info

@@ -8,7 +8,7 @@ spring:
 
 app:
   name: "AwesomeApp"
-  version: 3.7.2
+  version: 4.0
   production: false
   metadata:
     release_date: 2025-04-15
@@ -21,3 +21,6 @@ app:
         version: "20.x"
 
 server.port: 8084
+
+management:
+  endpoints.web.exposure.include: "*"
