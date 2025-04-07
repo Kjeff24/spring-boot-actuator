@@ -155,6 +155,9 @@ app:
 
 
 ## Key Concepts
+### ⚠️ Not All Configurations Are Dynamically Refreshable
+Certain system-level or static configurations (e.g., logging levels, server ports, classpath-injected properties) may require an application restart to apply changes.
+
 ### 🧩 Binding Strategies
 | Service                                      | Binding Method           | Scope Required?     | Notes                                          |
 |----------------------------------------------|--------------------------|---------------------|------------------------------------------------|
